@@ -22,7 +22,7 @@
 <script>
 import { AXIOS } from './http-common'
 export default {
-  name: 'HelloWorld',
+  name: 'Home',
   data () {
     return {
       repos: []
