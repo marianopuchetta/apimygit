@@ -21,13 +21,15 @@
 </template>
 <script>
 import { AXIOS } from './http-common'
+
 export default {
-  name: 'Home',
+  name: 'home',
   data () {
     return {
       repos: []
     }
   },
+
   methods: {
     retrieveGitPost () {
       AXIOS.get('https://api.github.com/users/marianopuchetta/repos')
@@ -40,10 +42,10 @@ export default {
         });
     }
   },
-  mounted(){
-    this.retrieveGitPosts();
+  mounted() {
+    this.retrieveGitPost();
   }
-}
+};
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
