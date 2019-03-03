@@ -1,113 +1,103 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li>
-        <a
-          href="https://vuejs.org"
-          target="_blank"
-        >
-          Core Docs
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://forum.vuejs.org"
-          target="_blank"
-        >
-          Forum
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://chat.vuejs.org"
-          target="_blank"
-        >
-          Community Chat
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://twitter.com/vuejs"
-          target="_blank"
-        >
-          Twitter
-        </a>
-      </li>
-      <br>
-      <li>
-        <a
-          href="http://vuejs-templates.github.io/webpack/"
-          target="_blank"
-        >
-          Docs for This Template
-        </a>
-      </li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li>
-        <a
-          href="http://router.vuejs.org/"
-          target="_blank"
-        >
-          vue-router
-        </a>
-      </li>
-      <li>
-        <a
-          href="http://vuex.vuejs.org/"
-          target="_blank"
-        >
-          vuex
-        </a>
-      </li>
-      <li>
-        <a
-          href="http://vue-loader.vuejs.org/"
-          target="_blank"
-        >
-          vue-loader
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://github.com/vuejs/awesome-vue"
-          target="_blank"
-        >
-          awesome-vue
-        </a>
-      </li>
-    </ul>
+   <div class="container">
+    <h1 id="h1">Mariano Puchetta</h1>
+    <h2 id="h2">List to my GitHub Repositories using api.github.com</h2>
+
+    <div v-for="(repo,index) in repos" :key="index">
+      <a :title="repo.description" :href="repo.html_url" target="_blank">
+        <li>{{repo.name}}</li>
+        {{repo.hmtl_url}}
+      </a>
+    </div>
+    <div id="panelMedia">
+      <a href="https://github.com/marianopuchetta" target="_blank">
+        <i class="fa fa-github" style="font-size:48px;"></i>
+      </a>
+      <a href="https://linkedin.com/in/marianopuchetta" target="_blank">
+        <i class="fa fa-linkedin" style="font-size:48px;"></i>
+      </a>
+    </div>
   </div>
 </template>
-
 <script>
+import { AXIOS } from './http-common'
 export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      repos: []
     }
+  },
+  methods: {
+    retrieveGitPost () {
+      AXIOS.get('https://api.github.com/users/marianopuchetta/repos')
+        .then(response => {
+          this.repos = response.data
+        })
+        /*eslint-disable*/
+        .catch(e => {
+          console.log(e);
+        });
+    }
+  },
+  mounted(){
+    this.retrieveGitPosts();
   }
 }
 </script>
-
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
-  font-weight: normal;
+@import url("https://fonts.googleapis.com/css?family=Acme|Pacifico");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+.fa {
+  padding: 4px;
+  width: 200px;
+  display: inline-block;
+  width: 1.28571429em;
+  text-shadow: -1px -1px 1px white;
+  text-shadow: 1px -1px -1px white;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
+.fa::after {
+  color: black;
+}
+.fa::before {
+  color: black;
+}
+
+#h2 {
+  font-family: "Pacifico";
+  text-shadow: 3px 3px 3px rgb(80, 80, 80);
+  text-shadow: -1px -1px 1px white;
+  text-shadow: 1px -1px -1px white;
+}
+#h1 {
+  font-family: "Acme";
+  text-shadow: 3px 3px 3px rgb(80, 80, 80);
+  text-shadow: -1px -1px 1px white;
+  text-shadow: 1px -1px -1px white;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(153, 149, 149, 0.6);
+}
+a:link {
+  text-decoration: none;
 }
 li {
-  display: inline-block;
-  margin: 0 10px;
+  list-style: none;
+  font-family: "Acme", cursive;
+  font-size: 20px;
+  text-shadow: -1px -1px 3px white;
+  text-shadow: 3px -1px -1px white;
 }
-a {
-  color: #42b983;
+li:hover {
+  font-size: 28px;
+  text-shadow: -1px -1px 3px red;
+  text-shadow: 3px -1px -1px red;
+}
+.a.title {
+  visibility: hidden;
 }
 </style>
