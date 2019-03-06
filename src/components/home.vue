@@ -82,6 +82,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
   background: rgba(153, 149, 149, 0.6);
 }
 a:link {
