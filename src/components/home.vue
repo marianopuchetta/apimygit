@@ -1,7 +1,7 @@
 <template>
    <div class="container">
     <h1 id="h1">Mariano Puchetta</h1>
-    <h2 id="h2">List to my GitHub Repositories using api.github.com</h2>
+    <h3 class="text-center" id="h2">List my GitHub Repositories using api.github.com</h3>
 
     <div v-for="(repo,index) in repos" :key="index">
       <a :title="repo.description" :href="repo.html_url" target="_blank">
