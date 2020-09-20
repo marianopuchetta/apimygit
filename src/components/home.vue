@@ -2,12 +2,23 @@
    <body class="container">
      <div >
      <header>
+       <nav>
+           <div>
+      <a href="mailto:marianopuchetta@hotmail.com" target="_blank">
+        <i class="fa fa-envelope"></i>
+      </a>
+      <a href="https://github.com/marianopuchetta" target="_blank">
+        <i class="fa fa-github"></i>
+      </a>
+      <a href="https://linkedin.com/in/marianopuchetta" target="_blank">
+        <i class="fa fa-linkedin"></i>
+      </a>
+    </div>
+       </nav>
        <h1 id="h1">Mariano Puchetta</h1>
-    <h3 class="text-center" >List my GitHub Repositories using api.github.com</h3>
-    
+       <h3 class="text-center" >these are my Github repositories using api.github.com</h3>
      </header>
     <section class="grid-container">
-
        <div v-for="(repo,index) in repos" :key="index" >
       <a :title="repo.description" :href="repo.html_url" target="_blank">
        <b-badge variant="success" class="badge"> <li>{{repo.name}}</li></b-badge>
@@ -18,11 +29,14 @@
     </section>
 <footer>
    <div>
+      <a href="mailto:marianopuchetta@hotmail.com" target="_blank">
+        <i class="fa fa-envelope"></i>
+      </a>
       <a href="https://github.com/marianopuchetta" target="_blank">
-        <i class="fa fa-github" style="font-size:48px;"></i>
+        <i class="fa fa-github"></i>
       </a>
       <a href="https://linkedin.com/in/marianopuchetta" target="_blank">
-        <i class="fa fa-linkedin" style="font-size:48px;"></i>
+        <i class="fa fa-linkedin"></i>
       </a>
     </div>
 </footer>
@@ -60,9 +74,10 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Ranchers&family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ranchers&display=swap');
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
 body{
-  /* height:100%; */
+  margin-top:2vh;
   font-family: 'Roboto', sans-serif;
   display: flex;
   flex-direction: column;
@@ -71,21 +86,17 @@ body{
   display: flex;
   flex-direction: column;
   text-align: center;
-  background: rgba(182, 169, 230, 0.5);
+  background: rgba(182, 169, 230, 0.4);
 }
-header{
-  padding:3vh;
-  margin:5vh;
-}
- h1 {
-  text-shadow: 3px 3px 3px rgb(80, 80, 80);
-  text-shadow: -1px -1px 1px white;
-  text-shadow: 1px -1px -1px white;
+header>h1{
+   padding:3vh;
+   margin-top:4vh;
+   font-family: 'Ranchers', cursive;
+   font-size:7em;
 } 
  h3 {
-  text-shadow: 3px 3px 3px rgb(80, 80, 80);
-  text-shadow: -1px -1px 1px white;
-  text-shadow: 1px -1px -1px white;
+   font-family: 'Ranchers', cursive;
+   margin-bottom: 3vh;;
 } 
 .grid-container {
   display: grid;
@@ -98,6 +109,7 @@ header{
   margin-bottom:5vh;
   padding:2vh;
   color:black;
+  background-color: rgba(255, 0, 0, 0.7);
 }
 a:link {
   text-decoration: none;
@@ -105,13 +117,21 @@ a:link {
 li {
   list-style: none;
   font-size: 1.7em;
-  text-shadow: -1px -1px 3px rgb(248, 243, 243);
-  text-shadow: 3px -1px -1px rgb(245, 240, 240);
+  color:white;
 }
 li:hover {
   font-size: 1.8em;
-  text-shadow: -1px -1px 3px red;
-  text-shadow: 3px -1px -1px red;
+}
+h1,h3,li{
+    color:white;
+    text-shadow: 2px 2px 0 rgba(45, 10, 240, 0.4), 
+             2px -2px 0 rgba(45, 10, 240, 0.4),
+            -2px 2px 0 rgba(45, 10, 240, 0.4),
+            -2px -2px 0 rgba(45, 10, 240, 0.4), 
+             2px 0px 0 rgba(45, 10, 240, 0.4), 
+             0px 2px 0 rgba(45, 10, 240, 0.4),
+            -2px 0px 0 rgba(45, 10, 240, 0.4),
+             0px -2px 0 rgba(45, 10, 240, 0.4);
 }
 .a.title {
   visibility: hidden;
@@ -120,7 +140,8 @@ footer{
   margin-top: 5vh;
 }
 .fa {
-  padding: 4px;
+  font-size: 3em;
+  padding: 2vh;
   width: 200px;
   display: inline-block;
   width: 1em;
