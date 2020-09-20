@@ -92,7 +92,7 @@ header>h1{
    padding:3vh;
    margin-top:4vh;
    font-family: 'Ranchers', cursive;
-   font-size:7em;
+   font-size:6em;
 } 
  h3 {
    font-family: 'Ranchers', cursive;
@@ -160,6 +160,9 @@ footer{
   grid-template-rows: 10vh 10vh;
   padding: 5vh;
   }
+   h1 {
+ font-size:4em;
+} 
 }
 @media only screen and (max-width: 768px) {
   body{
@@ -171,7 +174,7 @@ footer{
   margin:3vh;
 }
  h1 {
- 
+ font-size:4em;
 } 
  h3 {
  font-size:1.5em;
