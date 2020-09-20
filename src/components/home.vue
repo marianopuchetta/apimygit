@@ -160,7 +160,7 @@ footer{
   grid-template-rows: 10vh 10vh;
   padding: 5vh;
   }
-   h1 {
+  header>h1{
  font-size:4em;
 } 
 }
@@ -173,8 +173,8 @@ footer{
   padding:3vh;
   margin:3vh;
 }
- h1 {
- font-size:4em;
+ header>h1{
+ font-size:3.5em;
 } 
  h3 {
  font-size:1.5em;
