@@ -19,11 +19,14 @@
        <h3 class="text-center" >these are my Github repositories using api.github.com</h3>
      </header>
     <section class="grid-container">
-       <div v-for="(repo,index) in repos" :key="index" >
-      <a :title="repo.description" :href="repo.html_url" target="_blank">
-       <b-badge variant="success" class="badge"> <li>{{repo.name}}</li></b-badge>
-        {{repo.hmtl_url}}
-      </a>
+       <div v-for="(repo,index) in repos" :key="index" id="mydiv" > 
+      <!-- <a :title="repo.description" :href="repo.html_url" target="_blank"> -->
+       <b-dropdown variant="outline-success" dropup  class="button"   id="button" dropdown-toggle="dropdown" :text="repo.name" no-caret>
+       <b-dropdown-item-button  class="drop_item"> <a :href="repo.html_url" target="_blank" :title="repo.html_url"><i class="fa fa-github"></i></a></b-dropdown-item-button>
+       <b-dropdown-item-button  class="drop_item"><a  v-if="repo.homepage != null" :href="repo.homepage" target="_blank" :title="repo.homepage"><i class="fa fa-chrome"></i></a></b-dropdown-item-button>
+       </b-dropdown>
+      <!-- </a> -->
+       
     </div>
     
     </section>
@@ -50,21 +53,22 @@ export default {
   name: 'home',
   data () {
     return {
-      repos: []
+      repos: [],  
     }
   },
 
   methods: {
     retrieveGitPost () {
-      AXIOS.get('https://api.github.com/users/marianopuchetta/repos')
+      AXIOS.get('https://api.github.com/users/marianopuchetta/repos?per_page=100')
         .then(response => {
           this.repos = response.data
+          console.log(this.repos)
         })
         /*eslint-disable*/
         .catch(e => {
           console.log(e);
         });
-    }
+    },
   },
   mounted() {
     this.retrieveGitPost();
@@ -72,9 +76,10 @@ export default {
 };
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+
+
+<style scoped >
 @import url('https://fonts.googleapis.com/css2?family=Ranchers&family=Roboto:wght@500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Ranchers&display=swap');
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
 body{
   margin-top:2vh;
@@ -88,39 +93,44 @@ body{
   text-align: center;
   background: rgba(182, 169, 230, 0.4);
 }
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: 10vh 10vh;
+  grid-gap: 7vh;
+  column-gap:3vh;
+  padding: 1vh;
+}
 header>h1{
    padding:3vh;
    margin-top:4vh;
+   margin-bottom: 3vh;
    font-family: 'Ranchers', cursive;
    font-size:6em;
 } 
  h3 {
    font-family: 'Ranchers', cursive;
-   margin-bottom: 3vh;;
-} 
-.grid-container {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  grid-template-rows: 10vh 10vh;
-  grid-gap: 1vh;
-  padding: 5vh;
+   margin-bottom: 7vh;
 }
-.badge{
-  margin-bottom:5vh;
-  padding:2vh;
-  color:black;
-  background-color: rgba(255, 0, 0, 0.7);
+
+.drop_item .fa-chrome {
+  font-size: 1.8em;
 }
+.drop_item .fa-github {
+  font-size: 2em;
+}
+
 a:link {
   text-decoration: none;
 }
 li {
   list-style: none;
-  font-size: 1.7em;
+  font-size: 1.3em;
   color:white;
+  background-color: transparent;
 }
 li:hover {
-  font-size: 1.8em;
+  font-size: 1.5em;
 }
 h1,h3,li{
     color:white;
@@ -139,7 +149,7 @@ h1,h3,li{
 footer{
   margin-top: 5vh;
 }
-.fa {
+nav  .fa, footer  .fa {
   font-size: 3em;
   padding: 2vh;
   width: 200px;
@@ -148,10 +158,10 @@ footer{
   text-shadow: -1px -1px 1px white;
   text-shadow: 1px -1px -1px white;
 }
-.fa::after {
+nav  .fa, footer , .fa {
   color: black;
 }
-.fa::before {
+nav  .fa, footer  .fa, .circle {
   color: black;
 }
 @media only screen and (max-width: 1024px){
@@ -186,10 +196,27 @@ footer{
   }
   li {
   list-style: none;
-  font-size: 1.2em;
+  font-size: 1.6rem;
 }
 li:hover {
-  font-size: 1.4em;
+  font-size: 1.7em;
 }
+}
+</style>
+<style >
+.dropdown-menu{
+  background-color: transparent !important;
+  border:none;
+  transform: translate3d(2vh, -45px, 0px) !important;
+}
+.dropdown-item{
+  background-color: transparent !important;
+ 
+}
+.dropdown-menu.show {
+    display: flex;
+   padding:0;
+   
+
 }
 </style>
