@@ -191,8 +191,9 @@ nav  .fa, footer  .fa, .circle {
 }
   .grid-container {
   grid-template-columns: auto;
-  grid-template-rows: 10vh 10vh;
-  padding: 5vh;
+  grid-template-rows:5vh;
+  grid-gap: 6vh;
+  padding: 1vh;
   }
   li {
   list-style: none;
@@ -211,12 +212,16 @@ li:hover {
 }
 .dropdown-item{
   background-color: transparent !important;
- 
+  border:none;
 }
 .dropdown-menu.show {
     display: flex;
    padding:0;
-   
-
+   flex-flow: row nowrap;
+}
+@media only screen and (max-width: 768px){
+  .dropdown-menu{
+  transform: translate3d(2vh, -55px, 0px) !important;
+}
 }
 </style>
