@@ -119,7 +119,6 @@ header>h1{
 .drop_item .fa-github {
   font-size: 2em;
 }
-
 a:link {
   text-decoration: none;
 }
@@ -192,9 +191,18 @@ nav  .fa, footer  .fa, .circle {
   .grid-container {
   grid-template-columns: auto;
   grid-template-rows:5vh;
-  grid-gap: 6vh;
+  grid-gap: 12vh;
   padding: 1vh;
   }
+  .drop_item .fa-chrome {
+  font-size: 1.5em;
+}
+.drop_item .fa-github {
+  font-size: 1.7em;
+}
+li.drop_item{
+  width: 25%;
+}
   li {
   list-style: none;
   font-size: 1.6rem;
@@ -214,14 +222,16 @@ li:hover {
   background-color: transparent !important;
   border:none;
 }
+
 .dropdown-menu.show {
-    display: flex;
+    display: flex !important;
    padding:0;
-   flex-flow: row nowrap;
+   flex-flow: row nowrap !important;
 }
 @media only screen and (max-width: 768px){
   .dropdown-menu{
-  transform: translate3d(2vh, -55px, 0px) !important;
+  transform: translate3d(2vh, -45px, 0px) !important;
 }
+
 }
 </style>
