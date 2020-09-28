@@ -227,6 +227,7 @@ li:hover {
     display: flex !important;
    padding:0;
    flex-flow: row nowrap !important;
+   border:none;
 }
 @media only screen and (max-width: 768px){
   .dropdown-menu{
