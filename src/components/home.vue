@@ -216,7 +216,7 @@ li:hover {
 .dropdown-menu{
   background-color: transparent !important;
   border:none;
-  transform: translate3d(2vh, -45px, 0px) !important;
+  transform: translate3d(0px, -45px, 50px) !important;
 }
 .dropdown-item{
   background-color: transparent !important;
@@ -231,7 +231,7 @@ li:hover {
 }
 @media only screen and (max-width: 768px){
   .dropdown-menu{
-  transform: translate3d(2vh, -45px, 0px) !important;
+  transform: translate3d(0px, -45px, 0px) !important;
 }
 
 }
