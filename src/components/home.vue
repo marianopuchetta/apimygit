@@ -59,7 +59,7 @@ export default {
 
   methods: {
     retrieveGitPost () {
-      AXIOS.get('https://api.github.com/users/marianopuchetta/repos?per_page=100')
+      AXIOS.get('https://api.github.com/users/marianopuchetta/repos?sort=created_at')
         .then(response => {
           this.repos = response.data
           console.log(this.repos)
