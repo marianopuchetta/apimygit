@@ -19,9 +19,7 @@ body {
   display: flex;
   flex-flow: column wrap;
   align-items: center;
-background: #16A085;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to bottom, rgba(244, 208, 63, 0.7), #16A085);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to bottom, rgba(244, 208, 63, 0.9), #16A085); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+background-image: radial-gradient(circle, #f669b9, #e374cd, #cc7fdd, #b289e8, #9692ee, #7a9ff9, #59abfe, #2fb6ff, #00c9ff, #00daff, #00eaf8, #38f8eb);
   width: 100% !important;
 }
 html {
