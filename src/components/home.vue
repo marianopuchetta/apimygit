@@ -110,7 +110,6 @@ export default {
   display: flex;
   flex-direction: column;
   text-align: center;
-  width: 100% !important;
 }
 nav {
   display: flex;
@@ -136,7 +135,7 @@ h3 {
 }
 .grid-container {
   display: grid;
-  grid-template-columns: 57vh 57vh 57vh;
+  grid-template-columns: 55vh 55vh 55vh;
   grid-template-rows: 37vh;
   grid-gap: 5vh;
   column-gap: 3vh;
