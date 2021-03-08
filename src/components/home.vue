@@ -20,7 +20,7 @@
       </header>
       <section>
         <h3>
-          github repositories listed by api.github.com
+          Github repositories listed by api.github.com
         </h3>
         <div class="grid-container">
           <div v-for="(repo, index) in repos" :key="index" id="mydiv">
@@ -200,17 +200,14 @@ footer .fa {
   }
 
   .h1 {
-    font-size: 2.5em;
-    width: 60%;
+    font-size: 3em;
   }
   h2 {
-    font-size: 1em;
-    width: 50%;
+    font-size: 1.1em;
     margin-right: 0vh;
   }
   h3 {
     font-size: .9em;
-    width: 70%;
   }
   .grid-container {
     display: flex;
@@ -226,16 +223,16 @@ footer .fa {
   }
 
   .links {
-    font-size: 0.6em;
+    font-size: 0.7em;
     display: flex;
     justify-content: space-around;
   }
   .b-card{
-    font-size: .8em;
+    font-size: .85em;
     
   }
   .description{
-    font-size: .75em;
+    font-size: .8em;
   }
 }
 </style>
