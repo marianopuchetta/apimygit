@@ -215,7 +215,6 @@ footer .fa {
   .grid-container {
     display: flex;
     flex-flow: column nowrap;
-    width: 60%;
   }
   footer {
     margin-top: 5vh;
@@ -232,13 +231,11 @@ footer .fa {
     justify-content: space-around;
   }
   .b-card{
-    font-size: .85em;
+    font-size: .8em;
+    
   }
   .description{
     font-size: .75em;
-  }
-  section{
-    width: 100%;
   }
 }
 </style>
