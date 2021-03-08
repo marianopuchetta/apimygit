@@ -35,8 +35,6 @@
                 align="center"
               >
                 <b-card-text class="description"> {{ repo.description }}</b-card-text>
-               
-
                 <div class="links">
                   <a
                     :href="repo.html_url"
@@ -74,24 +72,23 @@
   </body>
 </template>
 <script>
-import { AXIOS } from "./http-common";
+import { AXIOS } from './http-common'
 
 export default {
-  name: "home",
-  data() {
+  name: 'home',
+  data () {
     return {
-      repos: [],
-    };
+      repos: []
+    }
   },
 
   methods: {
-    retrieveGitPost() {
+    retrieveGitPost () {
       AXIOS.get(
-        "https://api.github.com/users/marianopuchetta/repos?sort=created_at"
+        'https://api.github.com/users/marianopuchetta/repos?sort=created_at'
       )
         .then((response) => {
-          this.repos = response.data;
-          console.log(this.repos);
+          this.repos = response.data
         })
         /*eslint-disable*/
         .catch((e) => {
@@ -99,7 +96,7 @@ export default {
         });
     },
   },
-  mounted() {
+  created () {
     this.retrieveGitPost();
   },
 };
@@ -232,7 +229,7 @@ footer .fa {
     
   }
   .description{
-    font-size: .8em;
+    font-size: .85em;
   }
 }
 </style>

@@ -19,13 +19,12 @@ body {
   display: flex;
   flex-flow: column wrap;
   align-items: center;
-background: rgb(36,0,6);
-background: linear-gradient(90deg, rgba(36,0,6,0.5718662464985995) 0%, 
-rgba(9,81,121,1) 27%, rgba(166,0,255,0.8211659663865546) 65%);
+background: #FC5C7D;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #6A82FB, #FC5C7D);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #6A82FB, #FC5C7D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 html {
   height: 100%;
-  
 }
 #app {
   margin:0;
@@ -34,8 +33,7 @@ html {
   display: flex;
   flex-flow: column wrap;
   text-align: center;
-  justify-content: center; 
+  justify-content: center;
   height: 100%;
- 
 }
 </style>
