@@ -135,8 +135,8 @@ h3 {
 }
 .grid-container {
   display: grid;
-  grid-template-columns: 55vh 55vh 55vh;
-  grid-template-rows: 37vh;
+  grid-template-columns: 53vh 53vh 53vh;
+  grid-template-rows: 40vh;
   grid-gap: 5vh;
   column-gap: 3vh;
   padding: 1vh;
@@ -175,9 +175,9 @@ footer .fa {
   font-size: 1.1em;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
   .grid-container {
-    grid-template-columns: 45vh 45vh;
+    grid-template-columns: auto auto;
     grid-template-rows: 45vh;
   }
   header > h1 {
