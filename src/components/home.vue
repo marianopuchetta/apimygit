@@ -28,7 +28,7 @@
               <b-card
                 class="b-card"
                 border-variant="primary"
-                :header="repo.name"
+                :header="repo.name.toUpperCase()"
                 :footer="repo.language"
                 header-bg-variant="primary"
                 header-text-variant="white"
@@ -110,6 +110,7 @@ export default {
   display: flex;
   flex-direction: column;
   text-align: center;
+  width: 100% !important;
 }
 nav {
   display: flex;
@@ -118,6 +119,7 @@ nav {
   margin-top: 2.5vh;
   font-size: 6em;
   text-shadow: -1px -1px 1px white, 1px 0px 10px rgb(105, 100, 100);
+  font-weight: 700;
 }
 h2 {
   margin-right: 5vh;
@@ -135,16 +137,11 @@ h3 {
 .grid-container {
   display: grid;
   grid-template-columns: 57vh 57vh 57vh;
-  grid-template-rows: 35vh;
+  grid-template-rows: 37vh;
   grid-gap: 5vh;
   column-gap: 3vh;
   padding: 1vh;
 }
-
-a:link {
-  text-decoration: none;
-}
-
 /* li {
   color: white;
   text-shadow: 2px 2px 0 rgba(45, 10, 240, 0.4),
@@ -197,14 +194,17 @@ footer .fa {
   }
 
   .h1 {
-    font-size: 3em;
+    font-size: 4em;
+    font-weight: 700;
   }
   h2 {
     font-size: 1.1em;
     margin-right: 0vh;
+    font-weight: 700;
   }
   h3 {
-    font-size: .9em;
+    font-size: 1em;
+    font-weight: 700;
   }
   .grid-container {
     display: flex;
@@ -220,16 +220,19 @@ footer .fa {
   }
 
   .links {
-    font-size: 0.7em;
+    font-size: 0.8em;
     display: flex;
     justify-content: space-around;
+    font-weight: 600;
   }
   .b-card{
     font-size: .85em;
+   font-weight: 500;
     
   }
   .description{
-    font-size: .85em;
+    font-size: 1em;
+    font-weight: 500;
   }
 }
 </style>
