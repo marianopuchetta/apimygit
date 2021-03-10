@@ -19,6 +19,7 @@
         <h2>Developer</h2>
       </header>
       <section>
+      <!-- <a class="download_cv"  href="../../assets/CV_Mariano_Puchetta_Developer.pdf" target="_blank" download>Download</a> -->
         <h3>
           Github repositories listed by api.github.com
         </h3>
@@ -105,7 +106,10 @@ export default {
 <style scoped >
 @import url("https://fonts.googleapis.com/css2?family=Ranchers&family=Roboto:wght@500&display=swap");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
-
+img{
+  width: 500px;
+  height: 500px;
+}
 .container {
   display: flex;
   flex-direction: column;
@@ -136,10 +140,24 @@ h3 {
 .grid-container {
   display: grid;
   grid-template-columns: 53vh 53vh 53vh;
-  grid-template-rows: 40vh;
+  grid-template-rows: 43vh;
   grid-gap: 5vh;
   column-gap: 3vh;
   padding: 1vh;
+}
+.download_cv{
+      display: block; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20vh; /* Place the button at the bottom of the page */
+    left: 1vh; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    background-color : rgba(255, 0, 0, 0.8); /* Set a background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 2vh; /* Some padding */
+    border-radius: 50px; /* Rounded corners */
+    border:1px solid black;
+    font-size: 1em; /* Increase font size */
 }
 /* li {
   color: white;
@@ -174,6 +192,10 @@ footer .fa {
 .links > a:hover {
   font-size: 1.1em;
 }
+ .description{
+    font-size: .9em;
+    font-weight: 600;
+  }
 
 @media only screen and (max-width: 1024px) {
   .grid-container {
