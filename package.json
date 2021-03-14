@@ -4,11 +4,14 @@
   "description": "A Vue.js project",
   "author": "masterweed <marianopuchetta@hotmail.com>",
   "private": true,
+  "homepage": "https://marianopuchetta.github.io/apimygit",
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "node server.js",
     "lint": "eslint --ext .js,.vue src",
-    "build": "node build/build.js"
+    "build": "node build/build.js",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "axios": "^0.18.1",
@@ -45,6 +48,7 @@
     "extract-text-webpack-plugin": "^3.0.0",
     "file-loader": "^1.1.4",
     "friendly-errors-webpack-plugin": "^1.6.1",
+    "gh-pages": "^3.1.0",
     "html-webpack-plugin": "^2.30.1",
     "node-notifier": "^5.4.3",
     "optimize-css-assets-webpack-plugin": "^3.2.1",

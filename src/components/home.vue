@@ -19,7 +19,8 @@
         <h2>Developer</h2>
       </header>
       <section>
-      <!-- <a class="download_cv"  href="../../assets/CV_Mariano_Puchetta_Developer.pdf" target="_blank" download>Download</a> -->
+      <a class="download_cv"  href="https://drive.google.com/file/d/1u2NK9lcULS86x-7NLn9sCAo6-F4zq5kY/view?usp=sharing" target="_blank" download>Download CV</a>
+
         <h3>
           Github repositories listed by api.github.com
         </h3>
