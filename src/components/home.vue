@@ -19,7 +19,7 @@
         <h2>Developer</h2>
       </header>
       <section>
-      <a class="download_cv"  href="https://drive.google.com/file/d/1u2NK9lcULS86x-7NLn9sCAo6-F4zq5kY/view?usp=sharing" target="_blank" download>Download CV</a>
+      <a class="download_cv" id="download_cv"  href="https://drive.google.com/file/d/1u2NK9lcULS86x-7NLn9sCAo6-F4zq5kY/view?usp=sharing" target="_blank" download>CV</a>
 
         <h3>
           Github repositories listed by api.github.com
@@ -97,9 +97,27 @@ export default {
           console.log(e);
         });
     },
+       onScroll(e) {
+      let elem = document.getElementById("download_cv")
+
+        if (window.scrollY !== 0) {
+          elem.style.top = "88vh";
+        } else {
+          elem.style.top = "2vh";
+        }
+      
+    }
+ 
+   },
+
+ created:  function () {
+      this.retrieveGitPost();
+     window.addEventListener("scroll", this.onScroll);
+  
+
   },
-  created () {
-    this.retrieveGitPost();
+   destroyed: function () {
+    window.removeEventListener("scroll", this.onScroll);
   },
 };
 </script>
@@ -147,18 +165,19 @@ h3 {
   padding: 1vh;
 }
 .download_cv{
-      display: block; /* Hidden by default */
+    display: block; /* Hidden by default */
     position: fixed; /* Fixed/sticky position */
-    bottom: 20vh; /* Place the button at the bottom of the page */
-    left: 1vh; /* Place the button 30px from the right */
+    top: 2vh; /* Place the button at the bottom of the page */
+    right: 13vh; /* Place the button 30px from the right */
     z-index: 99; /* Make sure it does not overlap */
     background-color : rgba(255, 0, 0, 0.8); /* Set a background color */
     color: white; /* Text color */
     cursor: pointer; /* Add a mouse pointer on hover */
     padding: 2vh; /* Some padding */
-    border-radius: 50px; /* Rounded corners */
-    border:1px solid black;
-    font-size: 1em; /* Increase font size */
+    border-radius: 50%; /* Rounded corners */
+    border:2px solid white;
+    font-size: 1.4em; /* Increase font size */
+    font-weight: 900;
 }
 /* li {
   color: white;
@@ -256,6 +275,15 @@ footer .fa {
     font-size: 1em;
     font-weight: 500;
   }
+  .download_cv{
+      display: block; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    top: 1vh; /* Place the button at the bottom of the page */
+    right: 2vh; /* Place the button 30px from the right */
+    padding: 2vh; /* Some padding */
+    font-size: 1.4em; /* Increase font size */
+    font-weight: 900;
+}
 }
 </style>
 
