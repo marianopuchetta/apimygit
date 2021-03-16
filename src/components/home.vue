@@ -19,7 +19,7 @@
         <h2>Developer</h2>
       </header>
       <section>
-      <a class="download_cv" id="download_cv"  href="https://drive.google.com/file/d/1u2NK9lcULS86x-7NLn9sCAo6-F4zq5kY/view?usp=sharing" target="_blank" download>CV</a>
+      <a class="download_cv" id="download_cv"  href="https://drive.google.com/file/d/1oRxIUPQrJQ5Lqaqolve3Gu42-1F1GsvK/view?usp=sharing" target="_blank" download>CV</a>
 
         <h3>
           Github repositories listed by api.github.com
@@ -167,7 +167,7 @@ h3 {
 .download_cv{
     display: block; /* Hidden by default */
     position: fixed; /* Fixed/sticky position */
-    top: 2vh; /* Place the button at the bottom of the page */
+    top: 1.5vh; /* Place the button at the bottom of the page */
     right: 13vh; /* Place the button 30px from the right */
     z-index: 99; /* Make sure it does not overlap */
     background-color : rgba(255, 0, 0, 0.8); /* Set a background color */
